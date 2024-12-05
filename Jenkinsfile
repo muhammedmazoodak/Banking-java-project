@@ -3,11 +3,11 @@ pipeline{
     stages{
         stage('checkout the code from github'){
             steps{
-                 git url: 'https://github.com/akshu20791/Banking-java-project/'
+                 git url: 'https://github.com/muhammedmazoodak/Banking-java-project/'
                  echo 'github url checkout'
             }
         }
-        stage('codecompile with akshat'){
+        stage('codecompile with muhammedmazoodak'){
             steps{
                 echo 'starting compiling'
                 sh 'mvn compile'
