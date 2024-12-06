@@ -33,9 +33,10 @@ pipeline{
                sh 'docker build -t mazood/myimg .'
            }
          }
-        stage('port expose'){
-            steps{
-                sh 'docker run -dt -p 8091:8091 --name c000 mazood/myimg'
+        stage('Docker-Login') {
+           steps {
+               withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'dockerps', usernameVariable: 'docker')]) {
+               sh 'docker login -u ${docker} -p ${dockerps}'
             }
         }   
     }
