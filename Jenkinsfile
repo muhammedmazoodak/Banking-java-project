@@ -39,11 +39,11 @@ pipeline{
                sh 'docker login -u ${docker} -p ${dockerps}'
             }
         } 
-        stage('docker push-Image'){
-            stage{
+        stage('docker Push-Image'){
+            step{
                 sh 'docker push mazood/myimg'
             }
         }
     }
-}
+  }
 }
