@@ -40,7 +40,7 @@ pipeline{
                }
             }
         } 
-        stage('docker Push-Image'){
+        stage('Push-Image'){
             step{
                 sh 'docker push mazood/myimg'
             }
