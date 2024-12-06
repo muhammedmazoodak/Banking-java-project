@@ -33,7 +33,7 @@ pipeline{
                sh 'docker build -t mazood/myimg .'
            }
          }
-        stage('Docker-Login') {
+        stage('Docker-Login'){
            steps {
                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'dockerps', usernameVariable: 'docker')]) {
                sh 'docker login -u ${docker} -p ${dockerps}'
