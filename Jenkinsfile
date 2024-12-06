@@ -40,12 +40,17 @@ pipeline{
                }
             }
         } 
-        stage('Push-Image') {
+        stage('Push-Image'){
            steps {
                sh 'docker push mazood/myimg'
                      }
                 }
+        stage('port expose'){
+            steps{
+                sh 'docker run -dt -p 8091:8091 --name c000 mazood/myimg'
             }
         }
+    }
+}
     
   
