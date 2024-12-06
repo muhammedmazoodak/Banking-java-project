@@ -37,6 +37,7 @@ pipeline{
            steps {
                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'dockerps', usernameVariable: 'docker')]) {
                sh 'docker login -u ${docker} -p ${dockerps}'
+               }
             }
         } 
         stage('docker Push-Image'){
@@ -46,4 +47,3 @@ pipeline{
         }
     }
   }
-}
