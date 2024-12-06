@@ -38,7 +38,12 @@ pipeline{
                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'dockerps', usernameVariable: 'docker')]) {
                sh 'docker login -u ${docker} -p ${dockerps}'
             }
-        }   
+        } 
+        stage('docker push-Image'){
+            stage{
+                sh 'docker push mazood/myimg'
+            }
+        }
     }
 }
 }
